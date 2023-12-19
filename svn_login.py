@@ -10,12 +10,13 @@ raise_when_ele_not_found(True)
 # 创建配置对象（默认从 ini 文件中读取配置）
 co = ChromiumOptions()
 # 设置不加载图片、静音、隐身模式、无界面模式启动
+co.set_headless(True)
 co.set_no_imgs(True)
 co.set_mute(True)
 co.set_argument('--incognito')
 co.set_argument('--no-sandbox')
-co.set_headless(True)
-co.set_paths(browser_path=r'\usr\bin\google-chrome')
+co.set_paths(browser_path=r'/usr/bin/chromium')
+co.auto_port(True)
 
 # 记录开始时间
 start_time = time.time()
@@ -67,4 +68,3 @@ print(f"总执行时间: {execution_time} 秒")
 os.system("ps -ef | grep chrome | awk '{print $2}' | xargs kill -9")
 # page.quit()
 sys.exit()
-
