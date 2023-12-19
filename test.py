@@ -5,7 +5,7 @@ set_headless(True)
 co = ChromiumOptions()
 co.set_argument('--incognito')
 co.set_argument('--no-sandbox')
-co.set_paths(browser_path=r'/usr/bin/google-chrome')
+co.set_paths(browser_path=r'/usr/bin/chromium')
 co.auto_port(True)
 
 page = ChromiumPage(co)
